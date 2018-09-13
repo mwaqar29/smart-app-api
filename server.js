@@ -23,9 +23,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req,res) => {
-	db.select('*').from('users').then(data => {
-		res.send(data);
-	});
+	res.send("Backend is working!");
 });
 app.post('/signin', signin.handleSignin(db, bcrypt));
 app.post('/register', (req, res) => register.handleRegister(req, res, db, bcrypt));
